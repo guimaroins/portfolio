@@ -20,7 +20,8 @@ Optei por modularizar o código para manter o costume, então ele foi separado p
 
 #### Observação: por uma questão de segurança, não será utilizado valores reais de dados sensíveis (como caminho de arquivos e dados de conexão do banco de dados) em nenhuma parte do código. Para testar localmente, deverá introduzir as respectivas informações de acordo com sua máquina.
 
-## RESULTADO DO CÓDIGO: (gif)
+## RESULTADO DO CÓDIGO:
+![etl](https://github.com/guimaroins/portifolio/assets/108079970/6baf8c9c-9f25-49de-971e-b176eddfa47b)
 
 ## Explicando o código
 
@@ -166,7 +167,8 @@ df['mes_fato']= pd.to_datetime(df['data_fato']).dt.strftime('%B')
 
 Seria só substituir ```.dt.year.astype(str).str.replace('.0', '')``` por ```.dtstrftime('%Y)```, certo?
 Mas a verdade é que eu tentei! Buscando o melhor método para extrair os dados, eu sempre acabo testanto tudo, e após testar diversas vezes curiosamente percebi que o primeiro método levava exatamente a metade do tempo do segundo. 
-###(print)
+![time](https://github.com/guimaroins/portifolio/assets/108079970/56d33723-3708-40af-bc45-1c2360d6b967)
+
 
 Bom, não fui muito a fundo pesquisar o porquê, mas provavelmente deve ser pq ```strftime()``` faz um rolê muito maior para chegar no mesmo resultado e acaba ficando para trás. Não vale dizer que foi a máquina, viu? Testei até em dias diferentes, hahaha! E quanto ao uso da função ```rstrip()``````, bom, ela remove os caracteres do final da string independente da ordem. Então, 2020.0, por exemplo, acabava virando 202 D:
 
@@ -311,4 +313,4 @@ if __name__ == "__main__":
 ```
 
 ---
-Bom, chegamos ao final. Aprecio você, guerreirx, que leu até aqui. Espero que não tenha dúvidas quanto ao código, ele não foi feito para ser um grande projeto, apenas para subir dados a um banco por eu achar que vai ser mais prático de utilizá-los (e com certeza vai). E, principalmente, para manter o bom padrão de boas práticas, pois algumas coisas que fiz eu sei que não eram necessárias, mas é bom manter o costume. Qualquer dúvida, só chamar no linkedin (:
+Bom, chegamos ao final. Aprecio você, guerreirx, que leu até aqui. Espero que não tenha dúvidas quanto ao código, ele não foi feito para ser um grande projeto, apenas para subir dados a um banco por eu achar que vai ser mais prático de utilizá-los (e com certeza vai). E, principalmente, para manter o bom padrão de boas práticas, pois algumas coisas que fiz eu sei que não eram necessárias, mas é bom manter o costume. Acesse o arquivo ipynb pu py para ver o outpt. Qualquer dúvida, só chamar no linkedin (:
