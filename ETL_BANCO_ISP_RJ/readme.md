@@ -1,10 +1,9 @@
 # ETL GRUPOS VULNERÁVEIS - PYTHON
 
-Como os projetos deste repositório utilizarão os dados que solicitei por e-mail do ISP-RJ (Instituto de Segurança Pública do Rio de Janeiro), fiz uma pequena ETL em python para subir em um banco de dados postgre local. Fiz isso com o intuito de ser maais prático visto que os dados me foram encaminhados em dois arquivos csv e também para manter a prática em SQL. Os projetos vão ser focados em grupos vulneráveis e os dados estão disponíveis no site do ISP-RJ. Esses dados são de boletins de ocorrência registrados. Os passos são simples:
+Como os projetos deste repositório utilizarão os dados que solicitei por e-mail do ISP-RJ (Instituto de Segurança Pública do Rio de Janeiro), fiz uma pequena ETL em python para subir em um banco de dados postgre local. Fiz isso com o intuito de ser mais prático visto que os dados me foram encaminhados em dois arquivos csv e também para manter a prática em SQL. Os projetos vão ser focados em grupos vulneráveis e os dados estão disponíveis no site do ISP-RJ. Esses dados são de boletins de ocorrência registrados. Os passos são simples:
 
 - O código irá ler os dois arquivos csv e unir em um único dataframe;
 - Adicionará algumas colunas, substituirá alguns dados e converterá o tipo de algumas colunas;
-- Irá carregar o dataframe resultante no banco de dados.
 - Irá carregar o dataframe resultante no banco de dados.
 
 Para rodar localmente, será necessário instalar as seguintes bibliotecas:
@@ -82,7 +81,7 @@ def main() -> None:
 ### 4º: Função de extração de dados
 
 A partir desta parte do código, é criada as funções que de fato vão construir uma ETL. A primeira é a extract():
-- Ela lê dois arquivos CSV com o pandas utilizando a funçao pd.read_csv() utilizando as varáveis com os caminhos dos arquivos csv a serem lidos como parâmetros e os salva em dataframes distintos. Também foram usados como parâmetros encoding=latin1 para ler os caracteres especiais e o separador sendo ";" para o dataframe ser lido corretamente;
+- Ela lê dois arquivos CSV com o pandas utilizando a função pd.read_csv() utilizando as variáveis com os caminhos dos arquivos csv a serem lidos como parâmetros e os salva em dataframes distintos. Também foram usados como parâmetros encoding=latin1 para ler os caracteres especiais e o separador sendo ";" para o dataframe ser lido corretamente;
 - Concatena os dataframes utilizando a função pd.concat() do pandas utilizando ambos os dataframes para os unir em um dataframe.
 - Imprimir uma amostra de cinco linhas do dataframe gerado.
 - Retornar o dataframe gerado.
@@ -166,7 +165,7 @@ df['mes_fato']= pd.to_datetime(df['data_fato']).dt.strftime('%B')
 ```
 
 Seria só substituir ```.dt.year.astype(str).str.replace('.0', '')``` por ```.dtstrftime('%Y)```, certo?
-Mas a verdade é que eu tentei! Buscando o melhor método para extrair os dados, eu sempre acabo testanto tudo, e após testar diversas vezes curiosamente percebi que o primeiro método levava exatamente a metade do tempo do segundo. 
+Mas a verdade é que eu tentei! Buscando o melhor método para extrair os dados, eu sempre acabo testando de tudo, e após testar diversas vezes curiosamente percebi que o primeiro método levava exatamente a metade do tempo do segundo. 
 ![time](https://github.com/guimaroins/portifolio/assets/108079970/56d33723-3708-40af-bc45-1c2360d6b967)
 
 
