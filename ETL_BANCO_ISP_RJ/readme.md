@@ -170,7 +170,7 @@ Mas a verdade é que eu tentei! Buscando o melhor método para extrair os dados,
 ![time](https://github.com/guimaroins/portifolio/assets/108079970/56d33723-3708-40af-bc45-1c2360d6b967)
 
 
-Bom, não fui muito a fundo pesquisar o porquê, mas provavelmente deve ser pq ```strftime()``` faz um rolê muito maior para chegar no mesmo resultado e acaba ficando para trás. Não vale dizer que foi a máquina, viu? Testei até em dias diferentes, hahaha! E quanto ao uso da função ```rstrip()``````, bom, ela remove os caracteres do final da string independente da ordem. Então, 2020.0, por exemplo, acabava virando 202 D:
+Bom, não fui muito a fundo pesquisar o porquê, mas provavelmente deve ser pq ```strftime()``` faz um rolê muito maior para chegar no mesmo resultado e acaba ficando para trás. Não vale dizer que foi a máquina, viu? Testei até em dias diferentes, hahaha! E quanto ao uso da função ```rstrip()```, bom, ela remove os caracteres do final da string independente da ordem. Então, 2020.0, por exemplo, acabava virando 202 D:
 
 ### 6º: Função de transformar dados
 Aqui é feita a mudança ou conversão de dados originalmente no dataframe. Não tem muito mistério:
