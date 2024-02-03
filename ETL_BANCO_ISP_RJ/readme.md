@@ -229,7 +229,7 @@ Seguindo a lógica de organização e reaproveitamento do código, ao invés da 
 A função não há parâmetro algum.
 
 ```python
-def get_postgre_connection() -> pg.extensions.connection:
+def get_postgre_connection_parameters() -> pg.extensions.connection:
 
     '''Connect to postgre database. Steps:
         1. Creates a dict containing the connection parameters info.
