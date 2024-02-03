@@ -164,7 +164,7 @@ df['ano_fato']= pd.to_datetime(df['data_fato']).dt.year.astype(str).str.replace(
 df['mes_fato']= pd.to_datetime(df['data_fato']).dt.strftime('%B')
 ```
 
-Seria só substituir ```.dt.year.astype(str).str.replace('.0', '')``` por ```.dtstrftime('%Y)```, certo?
+Seria só substituir ```.dt.year.astype(str).str.replace('.0', '')``` por ```.dtstrftime('%Y')```, certo?
 Mas a verdade é que eu tentei! Buscando o melhor método para extrair os dados, eu sempre acabo testando de tudo, e após testar diversas vezes curiosamente percebi que o primeiro método levava exatamente a metade do tempo do segundo. 
 ![time](https://github.com/guimaroins/portifolio/assets/108079970/56d33723-3708-40af-bc45-1c2360d6b967)
 
