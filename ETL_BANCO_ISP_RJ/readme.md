@@ -225,7 +225,6 @@ def transform(df: pd.DataFrame) -> pd.DataFrame:
 Seguindo a lógica de organização e reaproveitamento do código, ao invés da função de carregamento dos dados ficar responsável por toda a criação da conexão e a ingestão dos dados, criei uma função separada que cria os parâmetros para que assim a função load() apenas receba os parâmetros e fique mais responsável por fazer a ingestão dos dados. Assim, além de ser mais seguro uma função separada com os dados da função (geralmente é utilizada para se ler os dados de outro lugar e não ficar salvo no código como eu fiz), a função gets_postgre_connection_parameters() realiza:
 - A criação de um dicionário contendo os as informações necessárias para serem utilizadas como parâmetros de conexão.
 - Retorna o dicionário.
-- Se não, imprime error e gera uma mensagem contendo o problema.
 
 A função não há parâmetro algum.
 
@@ -233,10 +232,7 @@ A função não há parâmetro algum.
 def get_postgre_connection() -> pg.extensions.connection:
 
     '''Connect to postgre database. Steps:
-        1. Creates a dict containing the connection parameters info;
-        2. Tries to conect to the database;
-        3. Prints a successfully message if the connection is established;
-        4. Prints the error if it's not.
+        1. Creates a dict containing the connection parameters info.
         
         Parameters:
         - None
@@ -267,8 +263,8 @@ Aqui é onde a magia acontece, pois é a função responsável por fazer a inges
 def load(df: pd.DataFrame, schema_name: str, table_name: str) -> None:
 
     '''Load the transformed dataframe into the postgre database. Steps:
-        1. Calls the postgre connection function to establishe a connection with the database;
-        2. Creates a SQLAlchemy object for the conection using the parameters connection in the postgre connection function;
+        1. Calls the postgre connection function to receive the connection parameters;
+        2. Creates a SQLAlchemy object for the conection using the parameters connection received;
         3. Sets the schema and creates it if doesn't exist;
         4. Loads the transformed dataframe into the database;
         5. Closes the connection;
