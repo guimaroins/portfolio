@@ -143,7 +143,7 @@ def load(df: pd.DataFrame, schema_name: str, table_name: str) -> None:
 
     '''Load the transformed dataframe into the postgre database. Steps:
         1. Calls the postgre connection parameters function to receive the parameters;
-        2. Creates a SQLAlchemy object for the conection using the parameters connection in the postgre connection function;
+        2. Creates a SQLAlchemy object for the conection using the parameters connection received;
         3. Sets the schema and creates it if doesn't exist;
         4. Loads the transformed dataframe into the database;
         5. Closes the connection;
