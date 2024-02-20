@@ -1,0 +1,1 @@
+# Explicação contida no notebook. Abra o arquivo ipynb para uma leitura explicativa.
