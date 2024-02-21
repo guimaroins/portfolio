@@ -140,6 +140,7 @@ map1 = px.choropleth_mapbox(
 )
 map1.show()
 ```
+![Captura de Tela 2024-02-21 às 05 19 56](https://github.com/guimaroins/portfolio/assets/108079970/92856c3e-4ac7-4a3e-bade-56ba2f1ce996)
 
 ### 8ª célula:
 Sei que não é legal repetir gráficos, mas achei interessante os dados desse. Nesse é mostrado qual o grupo mais vulnerável por município com base no grupo que teve a maior quantidade de casos. Os grupos "Crianças e adolescentes" e "Jovens" não tiveram destaque em nenhum município. Foi utilizado o código IBGE como chave.
@@ -160,6 +161,8 @@ map2 = px.choropleth_mapbox(
 )
 map2.show()
 ```
+![Captura de Tela 2024-02-21 às 05 21 26](https://github.com/guimaroins/portfolio/assets/108079970/531c9e32-f33a-4265-86c0-7a4720fe67d1)
+
 ### 9ª célula:
 Agora criarei um gráfico de barras simples reutillizando o df usado anteriormente como filtro e removendo apenas a coluna com os municípios, pois não será utilizada, e realizo as transformações necessárias. Este gráfico mostra apenas quantidade de casos por grupo vulnerável no total.
 
@@ -185,6 +188,7 @@ fig.update_layout(width = 800) # largura da imagem
 
 fig.show()
 ```
+![Captura de Tela 2024-02-21 às 05 22 45](https://github.com/guimaroins/portfolio/assets/108079970/b14ef19f-88a0-4be0-bafb-41cfd1bea1c4)
 
 ### 11ª célula:
 Aqui quero criar um gráfico múltiplas linhas (uma para cada grupo) com a quantidade de registros de ocorrências por mês no ano de 2020 (será explicador posteriormente a razão). Para isso, faço um processimento parecido com o feito anteriormente de filtrar as colunas com o adicional de ter que transformar os meses para sua numeração correspondente para que mantenha-se na ordem correta dos meses e não na ordem alfabética (o que faria começar por abril). Ao final, retorno para a nomenclatura do mês.
@@ -236,6 +240,7 @@ fig_line.update_yaxes(showline = True, linewidth = 1, linecolor = 'black')
 
 fig_line.show()
 ```
+![Captura de Tela 2024-02-21 às 05 23 18](https://github.com/guimaroins/portfolio/assets/108079970/4dfc2c73-8a6a-46f9-b94f-dec0325a8a55)
 
 ### 13ª célula:
 Bom, eu gostaria de fazer uma uma observação um tanto quanto triste sobre esse gráfico. Fazendo uma breve análise dele, nota-se que ente os meses de Fevereiro a Maio (Abril para os idosos) houve uma queda nos registros das ocorrências. Quero deixar claro que escolhi propositalmente as coluna 'ano' e 'mes' ao invés de 'ano_fato' e 'mes_fato', pois retratam quando foram feitos os registrosnas delegacias, e não quando ocorreram os fatos. O ano de 2020 e 2021, especialmente 2020, foram o ápice da pandemia no Brasil. Durante esses meses, foi quando começaram as medidas protetivas contra o COVID-19 e o lockdown em abril (onde nota-se o "fim" da queda brusca no gráfico). O que acontece é que infelizmente muitos desses casos ocorrem em ambientes domésticos e a vítima convive com o agressor. Com o lockdown, muitos desses casos não foram registrados. Até houve uma diminuição nos casos em que o agressor era alguém que não residia com a vítima, mas parte do motivo da diminuuição brusca dos casos se deve à impossibilidade de registro deles. Vou utilizar como exemplo outro gráfico de linhas similar, mas utilizando apenas o grupo de idosos onde uma linha representa a quantidade de casos registrados no mês e a outra a quantidade de casos que de fato aconteceram. Aqui separo os dados que vão ser usados.
@@ -267,6 +272,7 @@ fig_line2.update_layout(
 
 fig_line2.show()
 ```
+![Captura de Tela 2024-02-21 às 05 23 52](https://github.com/guimaroins/portfolio/assets/108079970/b2d9a52f-e63b-4f9c-8b6b-4b3d3b78449e)
 
 Como observado entre Junho e Julho, era esperado que quando fosse voltando ao normal o funcionamento de registros dos casos (seja podendo sair de casa ou através de maios alternativos durante a pandemia), aqueles casos ocorridos quando era impossibilitado o registro começassem a ser registrados. Deve levar em consideração que filtrei 'ano_fato' por 2020 (o que automaticamente já filtra pelos que tem informações do ano de mês), mas têm casos onde não há informações do ano da ocorrência e nem do mês.
 
