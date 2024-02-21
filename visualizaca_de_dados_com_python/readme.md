@@ -276,6 +276,7 @@ fig_line2.show()
 
 Como observado entre Junho e Julho, era esperado que quando fosse voltando ao normal o funcionamento de registros dos casos (seja podendo sair de casa ou através de maios alternativos durante a pandemia), aqueles casos ocorridos quando era impossibilitado o registro começassem a ser registrados. Deve levar em consideração que filtrei 'ano_fato' por 2020 (o que automaticamente já filtra pelos que tem informações do ano de mês), mas têm casos onde não há informações do ano da ocorrência e nem do mês.
 
-# Consideração final
+# Considerações finais
+Para visualizar os displays, acesse o arquivo ipynb. Infelizmente nele não há as imagens dos gráficos ao fazer o commit no github, então elas só se encontram aqui no readme. 
 Recomendo a leitura do livro "Storytelling with data", pois contém uma leitura esclarecedora sobre visualização de dados. Utilizei alguns conceitos aqui.
 Obrigada pela leitura, espero ter sido clara :) Qualquer dúvida, chama no linkedin ;)
